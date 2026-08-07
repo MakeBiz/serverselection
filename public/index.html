@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ServerSelection: VPS &amp; cloud server picker</title>
+<meta name="description" content="Reference catalog of VPS and cloud servers: find a virtual server by workload, resources, location and price. Providers across Europe, the USA, the UAE and Russia, with deals and promo codes.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ServerSelection: pick a VPS in one minute">
+<meta property="og:description" content="Find a VPS by workload: resources, location and price. Compare providers across Europe, the USA, the UAE and Russia, with deals and promo codes.">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="ServerSelection">
+<meta property="og:url" content="https://serverselection.online/">
+<meta property="og:image" content="https://serverselection.online/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ServerSelection: VPS &amp; cloud server picker">
+<meta name="twitter:description" content="Find a VPS by workload: resources, location, price. Compare providers across Europe, the USA, the UAE and Russia.">
+<meta name="twitter:image" content="https://serverselection.online/og-image.png">
+<link rel="canonical" href="https://serverselection.online/">
+<link rel="alternate" hreflang="en" href="https://serverselection.online/">
+<link rel="alternate" hreflang="x-default" href="https://serverselection.online/">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://serverselection.online/#website","url":"https://serverselection.online/","name":"ServerSelection","description":"VPS matching calculator and reference catalog: find a virtual server by workload, resources, location and price.","inLanguage":"en-US","publisher":{"@id":"https://serverselection.online/#org"}},{"@type":"Organization","@id":"https://serverselection.online/#org","name":"ServerSelection","url":"https://serverselection.online/","logo":{"@type":"ImageObject","url":"https://serverselection.online/icon-512.png","width":512,"height":512}},{"@type":"WebApplication","name":"VPS matching calculator","url":"https://serverselection.online/#calc","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"inLanguage":"en-US"}]}</script>
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#074EE8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Onest:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Google tag (gtag.js): GA4 + Google Ads. TODO: replace G-XXXXXXXXXX and AW-XXXXXXXXX -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXXXXX');
+gtag('config', 'AW-XXXXXXXXX');
+</script>
+<!-- Yandex.Metrika counter. TODO: replace 100000000 with the new counter id -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=100000000', 'ym');
+    ym(100000000, 'init', {ssr:true, webvisor:true, clickmap:true, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/100000000" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /counters -->
+
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Golos Text',-apple-system,'Segoe UI',sans-serif;font-size:16px;line-height:1.55;color:#03235F;-webkit-font-smoothing:antialiased;
+background:radial-gradient(1100px 620px at 50% -260px,#D9E6FA 0%,rgba(217,230,250,0) 72%),linear-gradient(180deg,#F4F7FC 0%,#EDF1F7 100%);background-attachment:fixed}
+a{color:#013CA4;text-decoration:none}
+a:hover{color:#074EE8}
+::selection{background:#074EE8;color:#fff}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes pulseDot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(18,183,106,.45)}70%{opacity:.75;box-shadow:0 0 0 7px rgba(18,183,106,0)}}
+@keyframes ledBlink{0%,100%{opacity:1}45%{opacity:.25}}
+@keyframes shimmer{0%{background-position:-220% 0}100%{background-position:220% 0}}
+@keyframes ringPulse{0%{transform:translateZ(-58px) scale(.5);opacity:.95}70%{opacity:.28}100%{transform:translateZ(-58px) scale(1.3);opacity:0}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+@media (max-width:860px){[data-nav] a:not(:last-child){display:none}}
+[data-h="h1"]:hover{color:#013CA4;background:rgba(7,78,232,.07)}
+[data-h="h2"]:hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 2px 4px rgba(3,35,95,.28),0 14px 28px -8px rgba(7,78,232,.7)}
+[data-h="h3"]:hover{transform:translateY(-2px);filter:brightness(1.14)}
+[data-h="h4"]:hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 3px 6px rgba(0,0,0,.32),0 22px 44px -12px rgba(7,78,232,1)}
+[data-h="h5"]:hover{transform:translateY(-3px)}
+[data-h="h6"]:hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 14px 28px -8px rgba(7,78,232,.7)}
+[data-h="h7"]:hover{transform:translateY(-4px);border-color:#C9D8EF;box-shadow:inset 0 1px 0 #fff,0 2px 4px rgba(3,35,95,.06),0 28px 52px -22px rgba(3,35,95,.45)}
+[data-h="h8"]:hover{transform:translateY(-4px);box-shadow:inset 0 1px 0 #fff,0 28px 52px -22px rgba(3,35,95,.45)}
+[data-h="h9"]:hover{transform:translateY(-4px);border-color:#C9D8EF;box-shadow:inset 0 1px 0 #fff,0 28px 52px -22px rgba(3,35,95,.45)}
+[data-h="h10"]:hover{transform:translateY(-2px)}
+[data-h="h11"]:hover{background:#E9F0FD;color:#013CA4}
+.s1{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:9px;font-family:'Onest',sans-serif;font-size:12px;font-weight:700;color:#BBD3FF;background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.16)}
+.s3{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.4px;color:#013CA4;background:linear-gradient(180deg,#FFFFFF,#E9F0FD);border:1px solid #D8E3F6;padding:6px 14px;border-radius:100px;box-shadow:inset 0 1px 0 #fff,0 4px 12px -8px rgba(3,35,95,.4);margin-bottom:14px}
+.s4{font-family:'Onest',sans-serif;font-size:16px;font-weight:700;color:#013CA4;margin:22px 0 8px}
+.s5{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:#4E5F7C}
+.s6{position:relative;display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;border-radius:7px;background:rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.35);font-size:11px}
+.s7{font-size:12.5px;font-weight:700;letter-spacing:.9px;text-transform:uppercase;color:rgba(178,202,242,.72)}
+.s8{padding:22px;border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.025));border:1px solid rgba(255,255,255,.11);box-shadow:inset 0 1px 0 rgba(255,255,255,.1)}
+.s9{position:absolute;left:0;right:0;top:0;height:50%;background:linear-gradient(180deg,rgba(255,255,255,.26),rgba(255,255,255,0));pointer-events:none}
+.s10{padding:26px;border-radius:24px;background:linear-gradient(180deg,#FFFFFF,#FBFCFE);border:1px solid #E4EAF2;box-shadow:inset 0 1px 0 #fff,0 18px 36px -22px rgba(3,35,95,.4);transition:.2s}
+.s11{position:absolute;left:0;right:0;top:0;height:50%;border-radius:16px 16px 0 0;background:linear-gradient(180deg,rgba(255,255,255,.28),rgba(255,255,255,0))}
+.s12{font-size:15px;font-weight:500;color:#3A4E75;padding:8px 12px;border-radius:10px;transition:.15s}
+.s13{font-size:14.3px;color:#4E5F7C;margin-bottom:5px}
+.s14{font-size:14.3px;color:#4E5F7C;margin:0 0 10px}
+.s15{display:flex;align-items:center;gap:10px;margin-bottom:13px}
+.s16{font-family:'Onest',sans-serif;font-size:clamp(27px,3.2vw,38px);font-weight:800;letter-spacing:-1.1px;margin:0 0 10px}
+.s17{position:absolute;left:158px;top:48px;display:flex;flex-direction:column;gap:11px}
+.s18{color:#074EE8;font-weight:700}
+.s19{position:absolute;inset:0;border-radius:20px;background:#020C24;transform:translateZ(-20px)}
+.s20{position:absolute;inset:0;border-radius:20px;background:#04122F;transform:translateZ(-16px)}
+.s21{position:absolute;inset:0;border-radius:20px;background:#06173B;transform:translateZ(-12px)}
+.s22{position:absolute;inset:0;border-radius:20px;background:#081C47;transform:translateZ(-8px)}
+.s23{position:absolute;inset:0;border-radius:20px;background:#0A2152;transform:translateZ(-4px)}
+.s24{background:linear-gradient(100deg,#074EE8,#013CA4 60%,#0A2E7A);-webkit-background-clip:text;background-clip:text;color:transparent}
+.s25{width:7px;height:7px;border-radius:50%;background:#3D85FF;box-shadow:0 0 8px #3D85FF}
+.s26{font-family:'Onest',sans-serif;font-size:15.5px;font-weight:700;color:#fff;margin:0}
+.s27{font-size:16.5px;color:#5E6F8E;margin:0 0 32px;max-width:700px;text-wrap:pretty}
+.s28{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.16)}
+.s29{font-size:13.8px;color:rgba(196,216,248,.72);margin:0;text-wrap:pretty}
+.s30{font-family:'Onest',sans-serif;font-size:18px;font-weight:700;letter-spacing:-.3px;margin:0 0 12px}
+.s31{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:24px;margin-bottom:26px}
+.s32{font-family:'Onest',sans-serif;font-size:26px;font-weight:800;letter-spacing:-.8px;margin:0 0 8px}
+.s33{font-size:11.5px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:#5E7BB0}
+.s34{display:flex;align-items:center;gap:11px;margin-bottom:10px}
+.s35{display:flex;flex-wrap:wrap;gap:9px}
+.s36{position:absolute;left:128px;top:42px;display:flex;flex-direction:column;gap:9px}
+.s37{max-width:1180px;margin:0 auto;padding:60px 24px}
+.s38{width:5px;height:5px;border-radius:50%;background:#3D85FF}
+.s39{margin:0 0 10px 20px;padding:0}
+.s40{display:flex;flex-direction:column;gap:8px}
+.s41{font-size:14.3px;color:#4E5F7C;margin:0}
+.s42{font-size:12.5px;color:#8290A8}
+.s43{font-size:14px;cursor:pointer}
+[data-cookie]{pointer-events:none}
+[data-cookie] button,[data-cookie] a{pointer-events:auto}
+.nvw{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pbar{display:flex;align-items:center;justify-content:center;gap:6px;text-align:center;font-family:'Golos Text',sans-serif;font-size:13px;font-weight:600;color:#fff;padding:9px 16px;background:linear-gradient(90deg,#0F9D53,#22C36A);text-decoration:none;line-height:1.3}
+.pbar b{font-weight:800}
+.pbar .pa{font-weight:800;white-space:nowrap}
+.bg{display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;border:1px solid #D8E3F6;background:linear-gradient(180deg,#FFFFFF,#EFF4FD);color:#013CA4;font-size:19px;cursor:pointer;line-height:1;padding:0}
+.totop{position:fixed;right:20px;bottom:20px;z-index:70;width:48px;height:48px;border-radius:50%;border:1px solid #0B44B8;background:linear-gradient(180deg,#3D85FF,#0A47CC);color:#fff;font-size:22px;line-height:1;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .25s,transform .16s;box-shadow:0 10px 24px -8px rgba(7,78,232,.7)}
+.totop:hover{transform:translateY(-2px)}
+@media(max-width:860px){
+.nvw{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:6px;padding:14px 16px 18px;background:#F4F7FC;border-bottom:1px solid rgba(3,35,95,.1);box-shadow:0 24px 44px -22px rgba(3,35,95,.5)}
+.nvw.open{display:flex}
+.nvw.open a.s12{display:block;width:100%}
+.nvw a.s12{padding:12px 12px}
+.bg{display:inline-flex}
+}
+@media(max-width:640px){
+.s37{padding:44px 16px}
+.pbar{font-size:12px;padding:8px 12px}
+.totop{width:44px;height:44px;right:14px;bottom:14px}
+}
+</style>
+</head>
+<body>
+<a class="pbar" href="#promo">🔥 Deal: −30% off your first month at AdminVPS with code <b>MakeBiz30</b> <span class="pa">→ Deals</span></a>
+<div id="root"></div>
+<template id="tpl"> <div style="width:100%;overflow-x:clip"><header style="position:sticky;top:0;z-index:50;background:rgba(244,247,252,.72);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border-bottom:1px solid rgba(3,35,95,.08);box-shadow:0 1px 0 rgba(255,255,255,.8) inset"><div style="max-width:1180px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;min-height:66px;position:relative"><a href="#top" style="display:flex;align-items:center;gap:9px;font-family:'Onest',sans-serif;font-weight:800;font-size:21px;letter-spacing:-.6px;color:#03235F"><span>Server</span><span style="position:relative;overflow:hidden;color:#fff;padding:3px 10px;border-radius:11px;background:linear-gradient(180deg,#3D85FF,#0A47CC);border:1px solid #0B44B8;box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 4px 12px -3px rgba(7,78,232,.6)">Selection</span><span style="display:flex;gap:4px;margin-left:2px"><span style="font-family:'Golos Text',sans-serif;font-size:9px;font-weight:700;color:#fff;padding:3px 6px;border-radius:6px;line-height:1;background:linear-gradient(180deg,#1C56C4,#013CA4);box-shadow:inset 0 1px 0 rgba(255,255,255,.3)">VPS</span><span style="font-family:'Golos Text',sans-serif;font-size:9px;font-weight:700;color:#fff;padding:3px 6px;border-radius:6px;line-height:1;background:linear-gradient(180deg,#2E79FF,#074EE8);box-shadow:inset 0 1px 0 rgba(255,255,255,.3)">VDS</span><span style="font-family:'Golos Text',sans-serif;font-size:9px;font-weight:700;color:#fff;padding:3px 6px;border-radius:6px;line-height:1;background:linear-gradient(180deg,#DB3140,#C51929);box-shadow:inset 0 1px 0 rgba(255,255,255,.3)">CLOUD</span></span></a><button class="bg" type="button" aria-label="Menu" sc-camel-on-click="{{ toggleMenu }}">{{ menuIcon }}</button><nav data-nav="1" class="nvw {{ navCls }}" sc-camel-on-click="{{ closeMenu }}"><a href="#calc" class="s12" data-h="h1">Calculator</a><a href="#providers" class="s12" data-h="h1">Providers</a><a href="#promo" class="s12" data-h="h1">Deals</a><a href="#how" class="s12" data-h="h1">How it works</a><a href="/news" class="s12" data-h="h1">News</a><a href="#calc" style="position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:9px;margin-left:8px;font-family:'Onest',sans-serif;font-weight:700;font-size:14.5px;letter-spacing:.1px;line-height:1;color:#fff;padding:12px 20px;border-radius:13px;border:1px solid #0B44B8;background:linear-gradient(180deg,#3D85FF 0%,#0F58EC 48%,#0A47CC 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -1px 0 rgba(0,0,0,.22),0 1px 2px rgba(3,35,95,.25),0 8px 18px -6px rgba(7,78,232,.55);transition:.16s" data-h="h2"><span class="s9"></span><span style="position:relative">Find a server</span><span class="s6">→</span></a></nav></div></header><a id="top"></a><sc-if value="{{ heroSplit }}"><section style="max-width:1180px;margin:0 auto;padding:26px 24px 0"><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:16px;align-items:center"><div><div style="display:flex;align-items:center;gap:9px;margin-bottom:16px"><span style="width:26px;height:1px;background:linear-gradient(90deg,rgba(61,133,255,0),#3D85FF)"></span><span class="s33">VPS reference catalog</span></div><h1 style="font-family:'Onest',sans-serif;font-size:clamp(31px,3.9vw,47px);font-weight:800;letter-spacing:-1.5px;line-height:1.04;margin:0 0 13px;text-wrap:balance">Find your <span class="s24">VPS for the job</span></h1><p style="font-size:clamp(15px,1.3vw,17px);color:#5E6F8E;max-width:470px;margin:0;text-wrap:pretty">Set five parameters below and we sort providers to match</p></div><sc-if value="{{ show3d }}"><div style="position:relative;height:252px;perspective:1200px;perspective-origin:50% 50%"><div style="position:absolute;left:0;right:0;top:34px;bottom:-34px;transform-style:preserve-3d;animation:floatY 7s ease-in-out infinite"><div data-scene="1" style="position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(56deg) rotateZ(-42deg) scale(.5)"><div style="position:absolute;left:50%;top:50%;width:800px;height:800px;margin:-400px 0 0 -400px;transform:translateZ(-80px);background:repeating-linear-gradient(0deg,rgba(3,35,95,.08) 0 1px,transparent 1px 46px),repeating-linear-gradient(90deg,rgba(3,35,95,.08) 0 1px,transparent 1px 46px);-webkit-mask-image:radial-gradient(closest-side,#000 22%,transparent 70%);mask-image:radial-gradient(closest-side,#000 22%,transparent 70%)"></div><div style="position:absolute;left:50%;top:50%;width:560px;height:400px;margin:-200px 0 0 -280px;transform:translateZ(-60px);border-radius:50%;background:radial-gradient(closest-side,rgba(7,78,232,.36),rgba(7,78,232,0));filter:blur(26px)"></div><div style="position:absolute;left:50%;top:50%;width:430px;height:430px;margin:-215px 0 0 -215px;transform:translateZ(-59px);border-radius:50%;border:1px solid rgba(61,133,255,.4);background:radial-gradient(closest-side,rgba(61,133,255,0) 62%,rgba(61,133,255,.14) 78%,rgba(61,133,255,0) 92%)"></div><div style="position:absolute;left:50%;top:50%;width:330px;height:330px;margin:-165px 0 0 -165px;transform:translateZ(-58px);border-radius:50%;border:1px solid rgba(61,133,255,.28)"></div><div style="position:absolute;left:50%;top:50%;width:430px;height:430px;margin:-215px 0 0 -215px;border-radius:50%;border:1.5px solid rgba(61,133,255,.6);animation:ringPulse 3.4s ease-out infinite"></div><div style="position:absolute;left:50%;top:50%;width:300px;height:188px;margin:-94px 0 0 -150px;transform:translateZ(0px);transform-style:preserve-3d"><div class="s19"></div><div class="s20"></div><div class="s21"></div><div class="s22"></div><div class="s23"></div><div style="position:absolute;inset:0;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,#16336F 0%,#0B2358 55%,#071B45 100%);border:1px solid rgba(140,180,255,.20);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 30px 50px -26px rgba(2,12,36,.9)"><div style="position:absolute;left:18px;top:18px;width:150px;height:7px;border-radius:4px;background:linear-gradient(90deg,rgba(120,160,240,.55),rgba(120,160,240,0))"></div><div style="position:absolute;left:18px;top:44px;width:126px;height:98px;border-radius:11px;border:1px solid rgba(255,255,255,.09);background:repeating-linear-gradient(90deg,rgba(255,255,255,.09) 0 3px,rgba(255,255,255,0) 3px 8px)"></div><div class="s17"><div style="display:flex;gap:7px"><span class="s25"></span><span class="s28"></span><span class="s28"></span></div><div style="width:110px;height:6px;border-radius:3px;background:rgba(255,255,255,.09)"></div><div style="width:78px;height:6px;border-radius:3px;background:rgba(255,255,255,.09)"></div><div style="width:94px;height:6px;border-radius:3px;background:rgba(255,255,255,.09)"></div></div><div style="position:absolute;left:18px;bottom:15px;font-family:'Onest',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:2.4px;color:rgba(170,200,255,.55)">STORAGE</div></div></div><div style="position:absolute;left:50%;top:50%;width:300px;height:188px;margin:-94px 0 0 -150px;transform:translateZ(44px);transform-style:preserve-3d"><div class="s19"></div><div class="s20"></div><div class="s21"></div><div class="s22"></div><div class="s23"></div><div style="position:absolute;inset:0;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,#1A3B80 0%,#0D2A63 55%,#08204E 100%);border:1px solid rgba(140,180,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 30px 50px -26px rgba(2,12,36,.9)"><div style="position:absolute;left:18px;top:18px;width:170px;height:7px;border-radius:4px;background:linear-gradient(90deg,rgba(140,180,255,.6),rgba(140,180,255,0))"></div><div style="position:absolute;left:18px;top:44px;width:126px;height:98px;border-radius:11px;border:1px solid rgba(255,255,255,.09);background:repeating-linear-gradient(90deg,rgba(255,255,255,.10) 0 3px,rgba(255,255,255,0) 3px 8px)"></div><div class="s17"><div style="display:flex;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#12B76A;box-shadow:0 0 8px #12B76A;animation:ledBlink 3.1s ease-in-out infinite"></span><span class="s25"></span><span class="s28"></span></div><div style="width:110px;height:6px;border-radius:3px;background:rgba(255,255,255,.10)"></div><div style="width:64px;height:6px;border-radius:3px;background:rgba(255,255,255,.10)"></div><div style="width:98px;height:6px;border-radius:3px;background:rgba(255,255,255,.10)"></div></div><div style="position:absolute;left:18px;bottom:15px;font-family:'Onest',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:2.4px;color:rgba(170,200,255,.6)">WEB / SHOP</div></div></div><div style="position:absolute;left:50%;top:50%;width:300px;height:188px;margin:-94px 0 0 -150px;transform:translateZ(88px);transform-style:preserve-3d"><div class="s19"></div><div class="s20"></div><div class="s21"></div><div class="s22"></div><div class="s23"></div><div style="position:absolute;inset:0;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,#1E4494 0%,#0F2F6E 55%,#0A2354 100%);border:1px solid rgba(150,190,255,.24);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 30px 50px -26px rgba(2,12,36,.9)"><div style="position:absolute;left:18px;top:18px;width:190px;height:7px;border-radius:4px;background:linear-gradient(90deg,rgba(61,133,255,.85),rgba(61,133,255,0))"></div><div style="position:absolute;left:18px;top:44px;width:126px;height:98px;border-radius:11px;border:1px solid rgba(255,255,255,.10);background:repeating-linear-gradient(90deg,rgba(255,255,255,.11) 0 3px,rgba(255,255,255,0) 3px 8px)"></div><div class="s17"><div style="display:flex;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#12B76A;box-shadow:0 0 8px #12B76A"></span><span style="width:7px;height:7px;border-radius:50%;background:#3D85FF;box-shadow:0 0 8px #3D85FF;animation:ledBlink 2.2s ease-in-out infinite"></span><span class="s25"></span></div><div style="width:110px;height:6px;border-radius:3px;background:rgba(255,255,255,.12)"></div><div style="width:86px;height:6px;border-radius:3px;background:rgba(255,255,255,.12)"></div><div style="width:60px;height:6px;border-radius:3px;background:rgba(255,255,255,.12)"></div></div><div style="position:absolute;left:18px;bottom:15px;font-family:'Onest',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:2.4px;color:rgba(180,210,255,.7)">DATABASE</div></div></div><div style="position:absolute;left:50%;top:50%;width:300px;height:188px;margin:-94px 0 0 -150px;transform:translateZ(132px);transform-style:preserve-3d"><div style="position:absolute;inset:0;border-radius:20px;background:#02143A;transform:translateZ(-20px)"></div><div style="position:absolute;inset:0;border-radius:20px;background:#051B4A;transform:translateZ(-16px)"></div><div style="position:absolute;inset:0;border-radius:20px;background:#07225C;transform:translateZ(-12px)"></div><div style="position:absolute;inset:0;border-radius:20px;background:#0A2A6F;transform:translateZ(-8px)"></div><div style="position:absolute;inset:0;border-radius:20px;background:#0D3282;transform:translateZ(-4px)"></div><div style="position:absolute;inset:0;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,#2A5FCB 0%,#124099 52%,#0C2F79 100%);border:1px solid rgba(170,205,255,.34);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 34px 60px -24px rgba(7,78,232,.55)"><div style="position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.16) 0%,rgba(255,255,255,0) 34%);pointer-events:none"></div><div style="position:absolute;left:18px;top:18px;right:18px;height:7px;border-radius:4px;background:linear-gradient(90deg,#8FC0FF,rgba(127,178,255,.1));box-shadow:0 0 16px rgba(127,178,255,.75)"></div><div style="position:absolute;left:18px;top:44px;width:126px;height:98px;border-radius:11px;border:1px solid rgba(255,255,255,.14);background:repeating-linear-gradient(90deg,rgba(255,255,255,.16) 0 3px,rgba(255,255,255,0) 3px 8px)"></div><div class="s17"><div style="display:flex;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#12B76A;box-shadow:0 0 9px #12B76A"></span><span style="width:7px;height:7px;border-radius:50%;background:#8FC0FF;box-shadow:0 0 9px #8FC0FF"></span><span style="width:7px;height:7px;border-radius:50%;background:#8FC0FF;box-shadow:0 0 9px #8FC0FF;animation:ledBlink 1.7s ease-in-out infinite"></span></div><div style="width:110px;height:6px;border-radius:3px;background:rgba(255,255,255,.2)"></div><div style="width:72px;height:6px;border-radius:3px;background:rgba(255,255,255,.2)"></div><div style="width:92px;height:6px;border-radius:3px;background:rgba(255,255,255,.2)"></div></div><div style="position:absolute;left:18px;bottom:15px;font-family:'Onest',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:2.4px;color:rgba(215,232,255,.9)">AI / ML · KVM</div></div></div></div></div></div></sc-if></div></section></sc-if><section id="calc" style="max-width:1180px;margin:0 auto;padding:26px 24px 24px"><div style="position:relative"><div style="position:absolute;left:6%;right:6%;top:24px;bottom:-14px;border-radius:40px;background:radial-gradient(60% 60% at 50% 50%,rgba(7,78,232,.30),rgba(7,78,232,0));filter:blur(38px);pointer-events:none"></div><div style="position:relative;border-radius:30px;padding:1px;background:linear-gradient(180deg,rgba(150,190,255,.55),rgba(150,190,255,.08) 40%,rgba(3,20,60,.5));box-shadow:0 44px 90px -30px rgba(3,25,72,.55),0 8px 20px -12px rgba(3,25,72,.4)"><div style="border-radius:29px;overflow:hidden;background:linear-gradient(168deg,#0C2A63 0%,#071F4E 42%,#03132F 100%)"><div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:20px 28px;border-bottom:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,0))"><div style="display:flex;align-items:center;gap:13px"><span style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:13px;font-size:17px;background:linear-gradient(180deg,#3D85FF,#0A47CC);border:1px solid rgba(160,200,255,.4);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 8px 18px -6px rgba(7,78,232,.8)">🧮</span><div><div style="font-family:'Onest',sans-serif;font-size:17px;font-weight:700;color:#fff;letter-spacing:-.2px">VPS match calculator</div><div style="font-size:12.5px;color:rgba(190,212,248,.62)">5 parameters · ranked by match</div></div></div><div style="display:flex;align-items:center;gap:9px;padding:8px 14px;border-radius:100px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)"><span style="width:8px;height:8px;border-radius:50%;background:#12B76A;animation:pulseDot 2.4s ease-out infinite"></span><span style="font-size:12.5px;font-weight:600;color:rgba(212,228,255,.85)">15 providers online</span></div></div><div style="padding:28px"><div style="margin-bottom:26px"><div class="s15"><span class="s1">1</span><span class="s7">Workload</span></div><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(178px,1fr));gap:10px"><sc-for list="{{ tasks }}" as="c"><button type="button" aria-pressed="{{ c.pressed }}" sc-camel-on-click="{{ c.pick }}" style="font-family:'Golos Text',sans-serif;font-size:14.5px;font-weight:600;text-align:left;cursor:pointer;padding:11px 14px;border-radius:14px;transition:.15s;display:flex;align-items:center;gap:10px;background:{{ c.bg }};border:1px solid {{ c.bd }};color:{{ c.fg }};box-shadow:{{ c.sh }}" data-h="h3"><span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;flex:0 0 26px;border-radius:9px;font-size:14px;background:{{ c.icBg }};box-shadow:inset 0 1px 0 rgba(255,255,255,.18)">{{ c.ic }}</span><span>{{ c.name }}</span></button></sc-for></div></div><div class="s31"><div><div class="s15"><span class="s1">2</span><span class="s7">Memory (RAM)</span></div><div class="s35"><sc-for list="{{ ramChips }}" as="c"><button type="button" aria-pressed="{{ c.pressed }}" sc-camel-on-click="{{ c.pick }}" style="font-family:'Golos Text',sans-serif;font-size:14.5px;font-weight:600;cursor:pointer;padding:11px 16px;border-radius:13px;transition:.15s;background:{{ c.bg }};border:1px solid {{ c.bd }};color:{{ c.fg }};box-shadow:{{ c.sh }}" data-h="h3">{{ c.name }}</button></sc-for></div></div><div><div class="s15"><span class="s1">3</span><span class="s7">CPU cores</span></div><div class="s35"><sc-for list="{{ cpuChips }}" as="c"><button type="button" aria-pressed="{{ c.pressed }}" sc-camel-on-click="{{ c.pick }}" style="font-family:'Golos Text',sans-serif;font-size:14.5px;font-weight:600;cursor:pointer;padding:11px 16px;border-radius:13px;transition:.15s;background:{{ c.bg }};border:1px solid {{ c.bd }};color:{{ c.fg }};box-shadow:{{ c.sh }}" data-h="h3">{{ c.name }}</button></sc-for></div></div></div><div class="s31"><div><div class="s15"><span class="s1">4</span><span class="s7">Location</span></div><div class="s35"><sc-for list="{{ geoChips }}" as="c"><button type="button" aria-pressed="{{ c.pressed }}" sc-camel-on-click="{{ c.pick }}" style="font-family:'Golos Text',sans-serif;font-size:14.5px;font-weight:600;cursor:pointer;padding:11px 16px;border-radius:13px;transition:.15s;background:{{ c.bg }};border:1px solid {{ c.bd }};color:{{ c.fg }};box-shadow:{{ c.sh }}" data-h="h3">{{ c.name }}</button></sc-for></div></div></div><div style="margin-bottom:6px"><div class="s15"><span class="s1">5</span><span class="s7">Monthly budget</span></div><div class="s35"><sc-for list="{{ budgetChips }}" as="c"><button type="button" aria-pressed="{{ c.pressed }}" sc-camel-on-click="{{ c.pick }}" style="font-family:'Golos Text',sans-serif;font-size:14.5px;font-weight:600;cursor:pointer;padding:11px 16px;border-radius:13px;transition:.15s;background:{{ c.bg }};border:1px solid {{ c.bd }};color:{{ c.fg }};box-shadow:{{ c.sh }}" data-h="h3">{{ c.name }}</button></sc-for></div></div></div><div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:22px 28px;border-top:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(0,0,0,.14),rgba(0,0,0,.28))"><div style="font-size:13px;color:rgba(178,202,242,.62);max-width:440px">Tip: choosing a task presets recommended resources; you can adjust them manually</div><button type="button" sc-camel-on-click="{{ runCalc }}" style="position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:11px;font-family:'Onest',sans-serif;font-weight:700;font-size:16.5px;letter-spacing:.1px;line-height:1;cursor:pointer;color:#fff;padding:17px 30px;border-radius:16px;border:1px solid #2E6FF0;background:linear-gradient(180deg,#4C90FF 0%,#1560F0 46%,#0B4AD4 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 -1px 0 rgba(0,0,0,.28),0 2px 4px rgba(0,0,0,.3),0 16px 34px -10px rgba(7,78,232,.85);transition:.16s" data-h="h4"><span style="position:absolute;left:0;right:0;top:0;height:50%;background:linear-gradient(180deg,rgba(255,255,255,.3),rgba(255,255,255,0));pointer-events:none"></span><span style="position:absolute;inset:0;background:linear-gradient(105deg,transparent 38%,rgba(255,255,255,.34) 50%,transparent 62%);background-size:220% 100%;animation:shimmer 4.6s linear infinite;pointer-events:none"></span><span style="position:relative">Find a server</span><span style="position:relative;display:inline-flex;align-items:center;justify-content:center;width:23px;height:23px;border-radius:8px;background:rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.4);font-size:12px">→</span></button></div></div></div></div><div ref="{{ resRef }}"><sc-if value="{{ hasResults }}"><div style="margin-top:34px"><div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:18px"><h3 style="font-family:'Onest',sans-serif;font-size:22px;font-weight:800;letter-spacing:-.5px;margin:0">Your matches</h3><span class="s42">Ranked by fit to your task; prices are approximate starting rates from each provider</span></div><div style="display:flex;flex-direction:column;gap:14px"><sc-for list="{{ results }}" as="r"><div style="display:flex;flex-wrap:wrap;align-items:center;gap:18px;background:{{ r.cardBg }};border:1px solid {{ r.cardBd }};border-radius:22px;box-shadow:{{ r.cardSh }};padding:20px 22px;transition:.18s" data-h="h5"><div style="position:relative;flex:0 0 56px;width:56px;height:56px;border-radius:17px;display:flex;align-items:center;justify-content:center;font-family:'Onest',sans-serif;font-weight:800;color:#fff;font-size:21px;background:{{ r.logoBg }};box-shadow:{{ r.logoSh }}"><span style="position:absolute;left:0;right:0;top:0;height:50%;border-radius:17px 17px 0 0;background:linear-gradient(180deg,rgba(255,255,255,.28),rgba(255,255,255,0))"></span><span style="position:relative">{{ r.letter }}</span><span style="position:absolute;left:-7px;top:-7px;display:flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 6px;border-radius:8px;font-family:'Onest',sans-serif;font-size:11px;font-weight:800;color:#03235F;background:linear-gradient(180deg,#FFFFFF,#E5ECF8);border:1px solid #D3DEEE;box-shadow:0 4px 10px -3px rgba(3,35,95,.35)">{{ r.rank }}</span></div><div style="flex:1 1 300px;min-width:0"><h4 style="font-family:'Onest',sans-serif;font-size:18px;font-weight:700;letter-spacing:-.3px;margin:0;display:flex;align-items:center;gap:10px;flex-wrap:wrap"> {{ r.name }} <sc-if value="{{ r.top }}"><span style="font-family:'Golos Text',sans-serif;font-size:11px;font-weight:700;letter-spacing:.3px;color:#fff;padding:4px 10px;border-radius:9px;background:linear-gradient(180deg,#3D85FF,#0A47CC);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 4px 10px -3px rgba(7,78,232,.6)">Best match</span></sc-if><sc-if value="{{ r.badge }}"><span style="font-family:'Golos Text',sans-serif;font-size:11px;font-weight:600;color:#013CA4;padding:4px 10px;border-radius:9px;background:#EEF3FE;border:1px solid #D6E2FA">{{ r.badge }}</span></sc-if><sc-if value="{{ r.topPick }}"><span style="font-family:'Golos Text',sans-serif;font-size:11px;font-weight:700;color:#7A4E00;padding:4px 10px;border-radius:9px;background:linear-gradient(180deg,#FFF0CC,#FCE3A6);border:1px solid #F1CE7A">★ Our pick</span></sc-if></h4><p style="font-size:13.5px;color:#6E7D96;margin:5px 0 10px;text-wrap:pretty">{{ r.desc }}</p><sc-if value="{{ r.promo }}"><div style="display:inline-block;margin:0 0 10px;padding:6px 11px;border-radius:9px;background:linear-gradient(180deg,#EAF9F0,#DCF3E7);border:1px solid #B8E6CC;font-size:12px;font-weight:700;color:#0A7D46">🎁 {{ r.promo }}<sc-if value="{{ r.promoCode }}"> · promo code {{ r.promoCode }}</sc-if></div></sc-if><div style="display:flex;flex-wrap:wrap;gap:7px"><sc-for list="{{ r.matchTags }}" as="t"><span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;background:linear-gradient(180deg,#EEF1FE,#E4EAFC);color:#013CA4;padding:4px 10px;border-radius:8px;border:1px solid #DCE2FA"><span style="color:#12B76A;font-weight:700">✓</span>{{ t }}</span></sc-for><sc-for list="{{ r.tags }}" as="t"><span style="font-size:11.5px;font-weight:500;background:#F4F7FB;border:1px solid #E4EAF2;color:#4B5E80;padding:4px 10px;border-radius:8px">{{ t }}</span></sc-for></div></div><div style="flex:0 1 172px;display:flex;flex-direction:column;align-items:flex-end;gap:11px;min-width:158px"><div style="width:100%"><div style="height:8px;border-radius:5px;background:#E7ECF4;overflow:hidden;box-shadow:inset 0 1px 2px rgba(3,35,95,.14)"><div style="height:100%;border-radius:5px;width:{{ r.pct }};background:linear-gradient(90deg,#013CA4,#3D85FF);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 0 10px rgba(7,78,232,.5)"></div></div><div style="font-size:11.5px;color:#8290A8;margin-top:5px;text-align:right">{{ r.score }}% match</div></div><div style="font-family:'Onest',sans-serif;font-size:18px;font-weight:800;letter-spacing:-.4px;color:#03235F">{{ r.price }}</div><a href="{{ r.link }}" target="_blank" rel="sponsored nofollow noopener" sc-camel-on-click="{{ r.track }}" style="position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:9px;font-family:'Onest',sans-serif;font-weight:700;font-size:14.5px;line-height:1;color:#fff;padding:13px 20px;border-radius:13px;border:1px solid #0B44B8;background:linear-gradient(180deg,#3D85FF 0%,#0F58EC 48%,#0A47CC 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -1px 0 rgba(0,0,0,.22),0 1px 2px rgba(3,35,95,.25),0 8px 18px -6px rgba(7,78,232,.55);transition:.16s" data-h="h6"><span class="s9"></span><span style="position:relative">Visit</span><span class="s6">→</span></a></div></div></sc-for></div></div></sc-if></div></section><section id="providers" class="s37"><div class="s3">Catalog</div><h2 class="s16">Providers</h2><p class="s27">Fifteen vetted providers for different scenarios: from a budget Russian VPS with RUB billing to data centers in Dubai and the USA. Neutral descriptions, approximate prices</p><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px"><sc-for list="{{ providers }}" as="p"><div style="position:relative;display:flex;flex-direction:column;padding:24px;border-radius:24px;background:{{ p.cardBg }};border:1px solid {{ p.cardBd }};box-shadow:{{ p.cardSh }};transition:.2s" data-h="h7"><sc-if value="{{ p.featured }}"><div style="display:inline-flex;align-items:center;gap:7px;align-self:flex-start;font-family:'Golos Text',sans-serif;font-size:11.5px;font-weight:700;line-height:1.25;color:#fff;padding:6px 12px;border-radius:10px;margin-bottom:14px;background:{{ p.ribbonBg }};box-shadow:inset 0 1px 0 rgba(255,255,255,.42),0 6px 14px -5px rgba(3,35,95,.35)">{{ p.ribbonText }}</div></sc-if><div style="display:flex;align-items:center;gap:14px;margin-bottom:14px"><div style="position:relative;flex:0 0 50px;width:50px;height:50px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-family:'Onest',sans-serif;font-weight:800;color:#fff;font-size:19px;background:{{ p.logoBg }};box-shadow:{{ p.logoSh }}"><span style="position:absolute;left:0;right:0;top:0;height:50%;border-radius:16px 16px 0 0;background:linear-gradient(180deg,rgba(255,255,255,.3),rgba(255,255,255,0))"></span><span style="position:relative">{{ p.letter }}</span></div><div style="min-width:0"><h3 style="font-family:'Onest',sans-serif;font-size:18.5px;font-weight:700;letter-spacing:-.4px;margin:0">{{ p.name }}</h3><div class="s42">{{ p.geoLabel }}</div></div></div><p style="font-size:14.3px;color:#4E5F7C;margin:0 0 16px;flex-grow:1;text-wrap:pretty">{{ p.desc }}</p><div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px"><sc-for list="{{ p.tags }}" as="t"><span style="font-size:11.5px;font-weight:600;background:linear-gradient(180deg,#EFF4FD,#E6EEFB);color:#013CA4;padding:5px 11px;border-radius:9px;border:1px solid #DEE7F8">{{ t }}</span></sc-for></div><sc-if value="{{ p.promo }}"><div style="display:flex;flex-direction:column;gap:3px;margin:0 0 16px;padding:11px 13px;border-radius:12px;background:linear-gradient(180deg,#EAF9F0,#DCF3E7);border:1px solid #B8E6CC"><span style="font-family:'Onest',sans-serif;font-size:13px;font-weight:700;color:#0A7D46">🎁 {{ p.promo }}</span><sc-if value="{{ p.promoCode }}"><span style="align-self:flex-start;font-family:monospace;font-size:12.5px;font-weight:800;letter-spacing:.5px;color:#0A7D46;background:#E7F8EF;border:1px dashed #86D8A9;border-radius:8px;padding:4px 9px;margin:2px 0">Promo code: {{ p.promoCode }}</span></sc-if><span style="font-size:11.5px;color:#3B7256">{{ p.promoCond }}</span><sc-if value="{{ p.promoMore }}"><span style="font-size:11px;font-weight:700;color:#0A7D46">+ {{ p.promoMore }} more under Deals</span></sc-if></div></sc-if><div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:16px;border-top:1px solid #EDF1F7"><span style="font-family:'Onest',sans-serif;font-size:17px;font-weight:800;letter-spacing:-.4px;color:#03235F">{{ p.price }}</span><a href="{{ p.link }}" target="_blank" rel="sponsored nofollow noopener" sc-camel-on-click="{{ p.track }}" style="position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:9px;font-family:'Onest',sans-serif;font-weight:700;font-size:14.5px;line-height:1;color:#fff;padding:12px 19px;border-radius:13px;border:1px solid #0B44B8;background:linear-gradient(180deg,#3D85FF 0%,#0F58EC 48%,#0A47CC 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -1px 0 rgba(0,0,0,.22),0 1px 2px rgba(3,35,95,.25),0 8px 18px -6px rgba(7,78,232,.5);transition:.16s" data-h="h6"><span class="s9"></span><span style="position:relative">Visit</span><span class="s6">→</span></a></div></div></sc-for></div></section><section id="promo" class="s37"><div class="s3">Deals</div><h2 class="s16">Deals &amp; promo codes</h2><p class="s27">Active discounts and promo codes from our partners. Apply the discount via the button or with the code at checkout.</p><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px"><sc-for list="{{ promos }}" as="a"><div style="position:relative;display:flex;flex-direction:column;padding:24px;border-radius:24px;background:linear-gradient(180deg,#FFFFFF,#F4FBF7);border:1px solid #C7E9D5;box-shadow:inset 0 1px 0 #fff,0 18px 36px -22px rgba(10,125,70,.4)"><div style="display:inline-flex;align-self:flex-start;align-items:center;gap:6px;font-family:'Golos Text',sans-serif;font-size:11.5px;font-weight:700;color:#fff;padding:6px 12px;border-radius:10px;margin-bottom:16px;background:linear-gradient(180deg,#22C36A,#0F9D53);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 6px 14px -5px rgba(16,157,83,.5)">🎁 Deal</div><div style="display:flex;align-items:center;gap:13px;margin-bottom:13px"><div style="position:relative;flex:0 0 46px;width:46px;height:46px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-family:'Onest',sans-serif;font-weight:800;color:#fff;font-size:18px;background:{{ a.logoBg }};box-shadow:{{ a.logoSh }}"><span style="position:relative">{{ a.letter }}</span></div><h3 style="font-family:'Onest',sans-serif;font-size:18.5px;font-weight:700;letter-spacing:-.4px;margin:0">{{ a.provider }}</h3></div><p style="font-family:'Onest',sans-serif;font-size:19px;font-weight:700;letter-spacing:-.4px;color:#0A7D46;margin:0 0 12px;text-wrap:pretty">{{ a.benefit }}</p><sc-if value="{{ a.hasCode }}"><div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px"><span style="font-family:monospace;font-size:15px;font-weight:800;letter-spacing:.5px;color:#0A7D46;background:#E7F8EF;border:1px dashed #86D8A9;border-radius:10px;padding:9px 14px">{{ a.code }}</span><button type="button" onclick="var b=this;try{navigator.clipboard.writeText('{{ a.code }}').then(function(){b.textContent='Copied ✓';try{if(window.goal)window.goal('promo_copy',{code:'{{ a.code }}'})}catch(e){}},function(){b.textContent='Select manually'})}catch(e){b.textContent='Select manually'}" style="font-family:'Onest',sans-serif;font-size:13px;font-weight:700;color:#0A7D46;background:#fff;border:1px solid #B8E6CC;border-radius:10px;padding:9px 14px;cursor:pointer">Copy</button></div></sc-if><sc-if value="{{ a.cond }}"><p style="font-size:12px;color:#5E7A6B;margin:0 0 16px;text-wrap:pretty">{{ a.cond }}</p></sc-if><a href="{{ a.link }}" target="_blank" rel="sponsored nofollow noopener" sc-camel-on-click="{{ a.track }}" style="margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:'Onest',sans-serif;font-weight:700;font-size:14.5px;line-height:1;color:#fff;padding:13px 20px;border-radius:13px;border:1px solid #0B7A43;background:linear-gradient(180deg,#22C36A,#0F9D53);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 8px 18px -6px rgba(16,157,83,.5)">Get the deal<span>→</span></a></div></sc-for></div><div style="text-align:center;margin-top:30px"><a href="/deals" style="display:inline-flex;align-items:center;gap:9px;font-family:'Onest',sans-serif;font-weight:700;font-size:14.5px;color:#0A7D46;padding:13px 24px;border-radius:13px;border:1px solid #B8E6CC;background:linear-gradient(180deg,#FFFFFF,#F1FBF5);box-shadow:inset 0 1px 0 #fff,0 6px 14px -8px rgba(16,157,83,.35)">All promo codes, terms and how to apply <span>→</span></a></div></section><section id="how" class="s37"><div class="s3">Technology</div><h2 class="s16">How it works</h2><p class="s27">The basics: why a single VPS covers almost any task, and what to check before you order</p><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px"><div class="s10" data-h="h8"><div style="position:relative;width:48px;height:48px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;background:linear-gradient(180deg,#3D85FF,#0A47CC);border:1px solid #0B44B8;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 10px 22px -8px rgba(7,78,232,.7)"><span class="s11"></span><span style="position:relative">⚙️</span></div><h3 style="font-family:'Onest',sans-serif;font-size:18px;font-weight:700;letter-spacing:-.3px;margin:0 0 9px">What is a VPS</h3><p style="font-size:14.3px;color:#4E5F7C;margin:0;text-wrap:pretty">A virtual server is an isolated slice of a physical server with guaranteed resources. Most run on KVM virtualization: you get full root access and can install any software, just like on a dedicated machine</p></div><div class="s10" data-h="h8"><div style="position:relative;width:48px;height:48px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;background:linear-gradient(180deg,#22C173,#0B8F4F);border:1px solid #0B8F4F;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 10px 22px -8px rgba(18,183,106,.6)"><span class="s11"></span><span style="position:relative">✅</span></div><h3 class="s30">What you can run</h3><div class="s40"><div class="s5"><span class="s18">→</span>Websites, stores, landing pages</div><div class="s5"><span class="s18">→</span>1C, Bitrix, CRM</div><div class="s5"><span class="s18">→</span>Telegram bots and services</div><div class="s5"><span class="s18">→</span>Databases and backends</div><div class="s5"><span class="s18">→</span>AI and ML inference</div><div class="s5"><span class="s18">→</span>Game and test servers</div></div></div><div class="s10" data-h="h8"><div style="position:relative;width:48px;height:48px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;background:linear-gradient(180deg,#DB3140,#A8121F);border:1px solid #A8121F;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 10px 22px -8px rgba(197,25,41,.55)"><span class="s11"></span><span style="position:relative">📌</span></div><h3 class="s30">What to check before ordering</h3><div class="s40"><div class="s5"><span class="s18">→</span>Resources are capped by your plan; leave headroom for load</div><div class="s5"><span class="s18">→</span>Location affects latency and data-residency rules</div><div class="s5"><span class="s18">→</span>Check the payment method: RUB, foreign card, crypto</div><div class="s5"><span class="s18">→</span>Follow the provider&#39;s AUP and the law</div></div></div></div></section><section id="news" class="s37"><div class="s3">Editorial</div><h2 class="s16">News &amp; reviews</h2><p class="s27">We write only what we can verify at the source, and explain what it means for choosing a server</p><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px"><sc-for list="{{ news }}" as="n"><a href="{{ n.url }}" target="_blank" rel="noopener" sc-camel-on-click="{{ n.track }}" style="display:flex;flex-direction:column;padding:24px;border-radius:24px;color:inherit;text-decoration:none;background:linear-gradient(180deg,#FFFFFF,#FBFCFE);border:1px solid #E4EAF2;box-shadow:inset 0 1px 0 #fff,0 18px 36px -22px rgba(3,35,95,.4);transition:.2s;cursor:pointer" data-h="h9"><div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px"><span style="font-size:11.5px;font-weight:700;letter-spacing:.3px;color:#fff;padding:5px 11px;border-radius:9px;background:linear-gradient(180deg,#3D85FF,#0A47CC);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 5px 12px -4px rgba(7,78,232,.55)">{{ n.tag }}</span><span style="font-size:12px;color:#8290A8">{{ n.date }}</span></div><h3 style="font-family:'Onest',sans-serif;font-size:17px;font-weight:700;letter-spacing:-.3px;line-height:1.3;margin:0 0 9px;text-wrap:pretty">{{ n.title }}</h3><p style="font-size:14px;color:#5E6F8E;margin:0;flex-grow:1;text-wrap:pretty">{{ n.text }}</p><div style="display:inline-flex;align-items:center;gap:7px;font-family:'Onest',sans-serif;font-size:13.5px;font-weight:700;color:#013CA4;margin-top:16px">Read <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:7px;background:#E9F0FD;border:1px solid #D8E3F6;font-size:11px">→</span></div></a></sc-for></div><div style="text-align:center;margin-top:32px"><a href="/news" style="display:inline-flex;align-items:center;gap:9px;font-family:'Onest',sans-serif;font-weight:700;font-size:14.5px;color:#013CA4;padding:13px 24px;border-radius:13px;border:1px solid #D8E3F6;background:linear-gradient(180deg,#FFFFFF,#F2F6FD);box-shadow:inset 0 1px 0 #fff,0 6px 14px -8px rgba(3,35,95,.35)">All news <span>→</span></a></div></section><footer style="background:linear-gradient(180deg,#FFFFFF,#F7F9FC);border-top:1px solid #E4EAF2;padding:40px 0 32px;box-shadow:inset 0 1px 0 #fff"><div style="max-width:1180px;margin:0 auto;padding:0 24px"><div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:22px;align-items:flex-start"><a href="#top" style="display:flex;align-items:center;gap:9px;font-family:'Onest',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.6px;color:#03235F"><span>Server</span><span style="color:#fff;padding:3px 10px;border-radius:11px;background:linear-gradient(180deg,#3D85FF,#0A47CC);border:1px solid #0B44B8;box-shadow:inset 0 1px 0 rgba(255,255,255,.45)">Selection</span></a><div style="display:flex;gap:22px;flex-wrap:wrap"><a href="/privacy" class="s43">Privacy policy</a><a href="/cookie" class="s43">Cookie use</a><a href="#how" style="font-size:14px">How it works</a><a href="#providers" style="font-size:14px">Providers</a><a href="mailto:info@serverselection.online" style="font-size:14px">info@serverselection.online</a></div></div><p style="font-size:12.5px;color:#8290A8;margin:26px 0 0;padding-top:22px;border-top:1px solid #E9EDF4;line-height:1.65;text-wrap:pretty">ServerSelection is an information and reference service for comparing virtual-server plans. The site is not a hosting reseller and does not provide hosting or communication services. All trademarks belong to their respective owners. Prices and specs are approximate, are not a public offer and may differ from current ones, so always check the terms on the provider’s site. We may earn an affiliate commission when you follow a link. The order in the picker reflects how well a provider matches your parameters and our partner priorities. Ranking positions are based on the independent sites Hostings.info and TopHosts as of August 2026; data-center counts are per the provider. News materials may contain advertising; relationships with advertisers are disclosed. © 2026 ServerSelection</p></div></footer><sc-if value="{{ showCookieBar }}"><div data-cookie="1" style="position:fixed;left:20px;right:20px;bottom:20px;z-index:80;max-width:600px;margin:0 auto;padding:20px 22px;border-radius:22px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;background:rgba(255,255,255,.94);backdrop-filter:blur(18px);border:1px solid #DDE5F0;box-shadow:0 30px 60px -20px rgba(3,35,95,.4),inset 0 1px 0 #fff"><p style="font-size:13.5px;color:#4E5F7C;flex:1;min-width:240px;margin:0">We use cookies, Google Analytics and Yandex Metrica to run the site and make it more useful. By staying on the site you agree to this and to our <a href="/privacy" target="_blank" rel="noopener" style="cursor:pointer;text-decoration:underline">privacy policy</a></p><button type="button" sc-camel-on-click="{{ acceptCookie }}" style="position:relative;overflow:hidden;display:inline-flex;align-items:center;font-family:'Onest',sans-serif;font-weight:700;font-size:14.5px;line-height:1;cursor:pointer;color:#fff;padding:13px 24px;border-radius:13px;border:1px solid #0B44B8;background:linear-gradient(180deg,#3D85FF 0%,#0F58EC 48%,#0A47CC 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -1px 0 rgba(0,0,0,.22),0 8px 18px -6px rgba(7,78,232,.55);transition:.16s" data-h="h10"><span class="s9"></span><span style="position:relative">Accept</span></button></div></sc-if><sc-if value="{{ modalOpen }}"><div sc-camel-on-click="{{ onBackdrop }}" style="position:fixed;inset:0;z-index:100;background:rgba(3,25,72,.55);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:20px"><div style="position:relative;background:#fff;border-radius:26px;max-width:740px;width:100%;max-height:86vh;overflow-y:auto;padding:clamp(26px,4vw,40px);box-shadow:0 50px 100px -30px rgba(3,25,72,.6);border:1px solid #E4EAF2" data-stop="1"><button type="button" sc-camel-on-click="{{ closeModal }}" style="position:absolute;top:20px;right:20px;width:36px;height:36px;border-radius:12px;border:1px solid #DFE6F0;background:linear-gradient(180deg,#FFFFFF,#F0F4FA);cursor:pointer;font-size:16px;color:#4E5F7C;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 #fff,0 2px 5px rgba(3,35,95,.08)" data-h="h11">✕</button><sc-if value="{{ isPrivacy }}"><div><h2 class="s32">Privacy policy</h2><p class="s14">This policy explains how the ServerSelection information and reference service (the service) processes visitor data. By using the site you agree to it.</p><h3 class="s4">1. What data we process</h3><p class="s14">The service collects no contact or personal data through forms: there is no sign-up, no order form and no personal-information fields. Only anonymized technical data is processed automatically:</p><ul class="s39"><li class="s13">cookies and session data</li><li class="s13">IP address, device type, browser and operating system</li><li class="s13">referrer, pages viewed and on-site actions</li></ul><h3 class="s4">2. Analytics tools</h3><p class="s14">The site uses Google Analytics and Yandex Metrica (including its Webvisor session replay) to measure traffic and improve the service. These tools may set cookies and collect anonymized behavior data on their side under their own terms.</p><h3 class="s4">3. Why we process it</h3><ul class="s39"><li class="s13">running the site and its features</li><li class="s13">measuring traffic and improving the catalog</li><li class="s13">attributing clicks on affiliate links</li></ul><h3 class="s4">4. Affiliate links</h3><p class="s14">The buttons that lead to providers carry affiliate tags (UTM). They let us attribute a click and a commission and do not pass your personal data to the provider.</p><h3 class="s4">5. Sharing with third parties</h3><p class="s14">Anonymized data may be processed by Google Analytics and Yandex Metrica. When you follow a link you reach a third-party provider’s site, which is governed by its own privacy policy.</p><h3 class="s4">6. Your rights and cookies</h3><p class="s14">You can disable cookies in your browser settings or limit data collection with your browser’s tools. This may affect how some site features work.</p><h3 class="s4">7. Changes</h3><p class="s14">This policy may be updated. The current version is always available on this page. Last updated: 2 August 2026.</p><h3 class="s4">8. Contact</h3><p class="s41">For questions about data processing, catalog content or the site, email <a href="mailto:info@serverselection.online" style="color:#0F58EC">info@serverselection.online</a></p></div></sc-if><sc-if value="{{ isCookie }}"><div><h2 class="s32">Cookie use</h2><p class="s14">ServerSelection uses cookies so the site works correctly, remembers your consent and is more useful.</p><h3 class="s4">Which cookies we use</h3><ul class="s39"><li class="s13">essential: storing your consent and interface settings</li><li class="s13">analytics: Google Analytics and Yandex Metrica for traffic and behavior</li></ul><h3 class="s4">Managing cookies</h3><p class="s14">By clicking &laquo;Accept&raquo; you agree to the use of all cookies. You can delete cookies and change their settings in your browser at any time.</p><p class="s41">For more on data processing, see the privacy policy.</p></div></sc-if></div></div></sc-if></div> </template>
+<button class="totop" id="totop" type="button" aria-label="To top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+function get(ctx, path){
+var parts = path.split('.'), v = ctx;
+for (var i=0;i<parts.length;i++){
+if (v == null) return undefined;
+v = v[parts[i]];
+}
+return v;
+}
+function interp(str, ctx){
+return str.replace(/\{\{\s*([^}]+?)\s*\}\}/g, function(_, p){
+if (p === 'true') return 'true';
+if (p === 'false') return 'false';
+var v = get(ctx, p);
+return v == null ? '' : String(v);
+});
+}
+function isBinding(str){ return /^\{\{\s*[^}]+\s*\}\}$/.test(str.trim()); }
+function bindingPath(str){ return str.trim().replace(/^\{\{\s*|\s*\}\}$/g, ''); }
+function renderNode(node, ctx, out){
+if (node.nodeType === 3){                       // text
+out.appendChild(document.createTextNode(interp(node.nodeValue, ctx)));
+return;
+}
+if (node.nodeType !== 1) return;
+var tag = node.tagName.toLowerCase();
+if (tag === 'sc-if'){
+var cond = get(ctx, bindingPath(node.getAttribute('value') || ''));
+if (cond) renderChildren(node, ctx, out);
+return;
+}
+if (tag === 'sc-for'){
+var list = get(ctx, bindingPath(node.getAttribute('list') || '')) || [];
+var alias = node.getAttribute('as') || 'item';
+for (var i=0;i<list.length;i++){
+var child = Object.create(ctx);
+child[alias] = list[i];
+child[alias + '_index'] = i;
+renderChildren(node, child, out);
+}
+return;
+}
+var el = document.createElement(tag);
+for (var a=0;a<node.attributes.length;a++){
+var at = node.attributes[a], name = at.name, val = at.value;
+if (name === 'ref'){
+if (isBinding(val)) REFS[bindingPath(val)] = el;
+continue;
+}
+if (name.indexOf('sc-camel-on-') === 0){
+var ev = name.slice('sc-camel-on-'.length);
+if (isBinding(val)){
+var fn = get(ctx, bindingPath(val));
+if (typeof fn === 'function') el.addEventListener(ev, fn);
+}
+continue;
+}
+el.setAttribute(name, interp(val, ctx));
+}
+renderChildren(node, ctx, el);
+out.appendChild(el);
+}
+function renderChildren(node, ctx, out){
+var kids = node.childNodes;
+for (var i=0;i<kids.length;i++) renderNode(kids[i], ctx, out);
+}
+var REFS = {};
+function mount(tplEl, ctx, target){
+REFS = {};
+var frag = document.createDocumentFragment();
+renderChildren(tplEl.content, ctx, frag);
+target.innerHTML = '';
+target.appendChild(frag);
+}
+var PROVIDERS = [
+{id:'timeweb',name:'Timeweb Cloud',color:'#1A5FD0',url:'https://timeweb.cloud/?i=143675',geoLabel:'Russia, Europe, USA',desc:'Russian cloud with data centers in Russia, Europe (Amsterdam, Frankfurt) and the USA (New York). Suits websites, 1C/Bitrix and general workloads.',geos:['ru','eu','us'],pay:['rub','foreign'],tasks:['site','shop','1c','bot','db','ai','game','dev','dedicated'],maxRam:64,priceRub:199,price:'≈ from $2.50/mo',tags:['Russia, Europe, USA','Pay in RUB','Russian software registry','Since 2006'],featured:true,topPick:true,badge:'#1 in the Hostings.info hosting test'},
+{id:'adminvps',name:'AdminVPS',color:'#0E7490',url:'https://my.adminvps.ru/aff.php?aff=29622',geoLabel:'Russia, Europe',desc:'Budget VPS with a fast start and locations in Russia and Europe. Low entry price, RUB billing.',geos:['ru','eu'],pay:['rub','foreign'],tasks:['site','shop','1c','bot','db','ai','game','dev','dedicated'],maxRam:64,priceRub:130,price:'≈ from $1.50/mo',tags:['Russia & Europe','Pay in RUB','9 data centers in 7 countries','Since 2015'],featured:true,badge:'#1 for VPS/VDS by TopHosts',promos:[{b:'−30% on your first month',code:'MakeBiz30',cond:'when paying for 1 month of hosting or VPS, one-time use'},{b:'−5% on your first year',code:'MakeBizYear',cond:'when paying for 1 year of hosting or VPS, one-time use'}]},
+{id:'regru',name:'Reg.ru',color:'#1F6FB2',url:'https://www.reg.ru/?rlink=reflink-31242589',geoLabel:'Russia',desc:'Major Russian registrar and host. Handy when you want a domain, hosting and a server in one account with proper invoices.',geos:['ru'],pay:['rub'],tasks:['site','shop','1c','db','dev'],maxRam:64,priceRub:422,price:'≈ from $5/mo',tags:['Russia','Pay in RUB','Domains & hosting','Invoices for businesses']},
+{id:'hostman',name:'Hostman',color:'#074EE8',url:'https://hostman.com/r/pb752795',geoLabel:'Europe, USA',desc:'Managed cloud with one-click app deployment. Great for developers and teams without dedicated DevOps.',geos:['eu','us','global'],pay:['foreign','crypto'],tasks:['site','shop','bot','db','ai','dev'],maxRam:64,priceRub:360,price:'from $4/mo',tags:['Managed cloud','App deployment','Europe & USA']},
+{id:'ishosting',name:'is*hosting',color:'#5B3FD0',url:'https://ishosting.io/affiliate/NzI2MSM4',noUtm:true,geoLabel:'40+ locations',desc:'Very wide geography and privacy, crypto payments. VPS and dedicated servers worldwide.',geos:['global','eu','us'],pay:['foreign','crypto'],tasks:['site','bot','db','game','dedicated','dev'],maxRam:128,priceRub:530,price:'from $5.90/mo',tags:['40+ locations','Crypto payments','Dedicated servers']},
+{id:'aeserver',name:'AEserver',color:'#0A7D52',url:'https://my.aeserver.com/aff.php?aff=1245',geoLabel:'UAE, Dubai',desc:'Local provider with a data center in Dubai. Low latency for the UAE and the Middle East.',geos:['uae'],pay:['foreign'],tasks:['site','shop','bot','db','dev'],maxRam:64,priceRub:450,price:'from $5/mo',tags:['UAE','Dubai','Low latency in MENA']},
+{id:'datapacket',name:'DataPacket',color:'#03235F',url:'https://portal.datapacket.net/aff.php?aff=189',geoLabel:'USA, global',desc:'Focused on performance and dedicated servers. Built for heavy workloads and production.',geos:['us','global'],pay:['foreign','crypto'],tasks:['db','ai','game','dedicated','dev'],maxRam:256,priceRub:540,price:'from $6/mo',tags:['USA','Performance','Dedicated servers']},
+{id:'truehost',name:'Truehost',color:'#C47F0A',url:'https://truehost.cloud/cloud/aff.php?aff=225',geoLabel:'Global',desc:'Affordable cloud with an easy start and global presence. A good pick for starters and small projects.',geos:['global','eu'],pay:['foreign'],tasks:['site','shop','bot','dev'],maxRam:32,priceRub:270,price:'from $3/mo',tags:['Budget-friendly','Global','Easy to start']},
+{id:'ultahost',name:'UltaHost',color:'#7A1FB8',url:'https://ultahost.com/#MakeBiz',geoLabel:'Global',desc:'Managed NVMe hosting focused on WordPress and speed. Great for websites and stores.',geos:['global','us','eu'],pay:['foreign','crypto'],tasks:['site','shop','bot','db','dev'],maxRam:64,priceRub:495,price:'from $5.50/mo',tags:['NVMe','Managed','For WordPress']},
+{id:'vpsorg',name:'VPS.org',color:'#B8341F',url:'https://vps.org/?ref=G2EMGEI2',geoLabel:'Global',desc:'Flexible plans and generous terms, card payments. A solid all-round mid-range option.',geos:['global','us','eu'],pay:['foreign'],tasks:['site','bot','db','game','dev'],maxRam:64,priceRub:450,price:'from $5/mo',tags:['Flexible plans','Global','Card payments']},
+{id:'ruvds',name:'RUVDS',color:'#1D4FD8',url:'https://ruvds.com/pr105060',geoLabel:'Russia, Europe, CIS',desc:'Russian provider with a wide network of Tier III data centers across Russia, the CIS and Europe. 152-FZ certified.',geos:['ru','eu'],pay:['rub','foreign'],tasks:['site','shop','1c','bot','db','game','dev','dedicated'],maxRam:128,priceRub:139,price:'≈ from $1.50/mo',tags:['Russia','Pay in RUB','20+ Tier III data centers','152-FZ certified'],promos:[{b:'−15% with promo code',code:'VFC-FTN-CSI',cond:''}]},
+{id:'firstvds',name:'FirstVDS',color:'#0369A1',url:'https://firstvds.ru/?from=1218803',geoLabel:'Russia, Europe',desc:'Russian VPS provider with its own data center in Moscow and locations in the Netherlands and Kazakhstan. For websites, 1C and everyday workloads.',geos:['ru','eu'],pay:['rub','foreign'],tasks:['site','shop','1c','bot','db','dev'],maxRam:64,priceRub:299,price:'≈ from $3.50/mo',tags:['Russia','Pay in RUB','Own data center in Moscow','Since 2002']},
+{id:'fornex',name:'Fornex',color:'#C2410C',url:'https://fornex.com/code/g6j9tn/',geoLabel:'Europe, USA, Russia',desc:'Provider with Russian-speaking support and servers in Europe and the USA. Pay with MIR cards or crypto.',geos:['eu','us','ru'],pay:['rub','foreign','crypto'],tasks:['site','shop','bot','db','dev','game'],maxRam:64,priceRub:497,price:'≈ from $6/mo',tags:['Europe & USA','MIR cards & crypto','Russian-speaking support'],promos:[{b:'−15% on VPS when you sign up via our link',code:'',cond:'discount applies when you register through our link'}]},
+{id:'cloud4box',name:'Cloud4Box',color:'#0891B2',url:'https://cloud4box.com/?from=99102',geoLabel:'Russia & abroad',desc:'Russian provider with a data center in Moscow plus overseas locations, and a flexible VPS configurator.',geos:['ru','eu','us'],pay:['rub','foreign'],tasks:['site','shop','bot','db','dev'],maxRam:64,priceRub:340,price:'≈ from $4/mo',tags:['Russia','Pay in RUB','Own data center in Moscow','Flexible configurator']},
+{id:'vdsina',name:'VDSina',color:'#4F46E5',url:'https://vdsina.ru/?partner=5xwp7v2732dp',geoLabel:'Russia, Europe',desc:'Russian provider with data centers in Moscow and Amsterdam. NVMe on AMD EPYC, hourly billing and a low entry price. Pay in RUB or crypto.',geos:['ru','eu'],pay:['rub','crypto'],tasks:['site','shop','bot','db','dev','game'],maxRam:128,priceRub:150,price:'≈ from $2/mo',tags:['Russia & Europe','Pay in RUB & crypto','NVMe on AMD EPYC','Hourly billing']}
+];
+var TASKS = [
+{id:'site',ic:'🌐',name:'Website or blog',ram:2,cpu:1},
+{id:'shop',ic:'🛒',name:'Online store',ram:4,cpu:2},
+{id:'1c',ic:'🧮',name:'1C or Bitrix',ram:4,cpu:2},
+{id:'bot',ic:'🤖',name:'Telegram bot',ram:2,cpu:1},
+{id:'db',ic:'🗄️',name:'Database',ram:8,cpu:4},
+{id:'ai',ic:'🧠',name:'AI & ML',ram:16,cpu:8},
+{id:'game',ic:'🎮',name:'Game server',ram:8,cpu:4},
+{id:'dev',ic:'💻',name:'Dev & testing',ram:2,cpu:2},
+{id:'dedicated',ic:'🖥️',name:'Dedicated server',ram:32,cpu:8}
+];
+var RAMS = [1,2,4,8,16,32];
+var CPUS = [1,2,4,8];
+var GEOS = [{id:'ru',name:'Russia'},{id:'eu',name:'Europe'},{id:'uae',name:'UAE'},{id:'us',name:'USA'},{id:'any',name:'Any'}];
+var PAYS = [{id:'rub',name:'Russian card & RUB'},{id:'foreign',name:'Foreign card'},{id:'crypto',name:'Cryptocurrency'}];
+var BUDGETS = [{id:500,name:'up to $5'},{id:1500,name:'up to $15'},{id:3000,name:'up to $30'},{id:0,name:'No limit'}];
+var NEWS = [
+{id:'choose-location',date:'Aug 4, 2026',tag:'Guide',title:'How to choose the right VPS location',text:'Latency, audience and data-residency rules all hinge on where your server sits. A short, practical way to decide.',url:'/news/how-to-choose-vps-location'},
+{id:'vps-vds-cloud',date:'Jul 28, 2026',tag:'Basics',title:'VPS, VDS and cloud: what is the difference',text:'The terms overlap and marketing muddles them. What actually changes for your project, in plain words.',url:'/news/vps-vds-cloud-difference'},
+{id:'ram-cpu-need',date:'Jul 21, 2026',tag:'Guide',title:'How much RAM and CPU your VPS really needs',text:'Most projects overpay or under-provision. Sensible starting points by workload, and when to scale up.',url:'/news/how-much-ram-cpu-vps'}
+];
+var CFG = { heroStyle:'split', show3d:true, showCookie:true, resultsCount:10, defaultTask:'' };
+var state = { task:null, ram:2, cpu:1, geo:'any', pay:null, budget:0, results:null, cookieSeen:true, modal:null, menu:false };
+function goal(name, params){
+try { if (typeof window.ym !== 'undefined') window.ym(100000000, 'reachGoal', name, params || {}); } catch(e){}
+try { if (typeof window.gtag === 'function') window.gtag('event', name, params || {}); } catch(e){}
+try { if (name === 'provider_click' && typeof window.gtag === 'function') window.gtag('event', 'conversion', { send_to: 'AW-XXXXXXXXX/XXXXXXXX' }); } catch(e){}
+}
+window.goal = goal;
+// UTM scheme: utm_source=serverselection | utm_medium=eng (version language) | utm_campaign=<page/block> | utm_content=<provider slug>
+function addUtm(url, campaign, slug){
+var utm = 'utm_source=serverselection&utm_medium=eng&utm_campaign=' + (campaign || 'site') + (slug ? '&utm_content=' + slug : '');
+var h = url.indexOf('#'), frag = '';
+if (h >= 0){ frag = url.slice(h); url = url.slice(0, h); }
+url += (url.indexOf('?') >= 0 ? '&' : '?') + utm;
+return url + frag;
+}
+function score(p){
+var s = 25, reasons = [];
+if (state.task){ if (p.tasks.indexOf(state.task) >= 0){ s += 25; reasons.push('matches task'); } else s -= 12; }
+if (state.geo && state.geo !== 'any'){ if (p.geos.indexOf(state.geo) >= 0){ s += 22; reasons.push('right region'); } else s -= 26; }
+else s += 6;
+// payment-method step removed from the calculator; factor not applied
+if (p.maxRam >= state.ram) s += 8; else s -= 10;
+if (state.budget){ if (p.priceRub <= state.budget){ s += 10; reasons.push('within budget'); } else s -= 10; }
+// tie-breaker on equal fit: cheaper entry ranks slightly higher. Objective; commission plays no part here
+s += Math.max(0, 6 - Math.round((p.priceRub || 600) / 110));
+return { score: Math.max(6, Math.min(99, s)), reasons: reasons };
+}
+function logoStyles(color){
+return {
+bg:'linear-gradient(160deg, color-mix(in oklab, '+color+' 68%, #ffffff), '+color+' 72%, color-mix(in oklab, '+color+' 78%, #000000))',
+sh:'inset 0 1px 0 rgba(255,255,255,.4), inset 0 -1px 0 rgba(0,0,0,.22), 0 10px 20px -8px '+color+'99'
+};
+}
+function setState(patch){ for (var k in patch) state[k] = patch[k]; render(); }
+function runCalc(){
+var limit = CFG.resultsCount || 9;
+// priority partners: lift to the top, but only when the provider genuinely fits.
+// otherwise the calculator would show, say, a Russian host for a UAE query and lose trust
+var PRIORITY = ['timeweb', 'adminvps'];
+var FIT = 50;
+var ranked = PROVIDERS.map(function(p){ var r = score(p); return { p:p, score:r.score, reasons:r.reasons }; })
+.sort(function(a, b){
+var ap = PRIORITY.indexOf(a.p.id) >= 0 && a.score >= FIT ? PRIORITY.indexOf(a.p.id) : 99;
+var bp = PRIORITY.indexOf(b.p.id) >= 0 && b.score >= FIT ? PRIORITY.indexOf(b.p.id) : 99;
+if (ap !== bp) return ap - bp;
+return b.score - a.score;
+}).slice(0, limit);
+setState({ results: ranked });
+goal('calc_result', { task: state.task || 'none', ram: state.ram, cpu: state.cpu, geo: state.geo || 'any', budget: state.budget || 0, count: ranked.length });
+setTimeout(function(){
+var n = REFS.resRef;
+if (n){ var y = n.getBoundingClientRect().top + window.pageYOffset - 90; window.scrollTo({ top:y, behavior:'smooth' }); }
+}, 60);
+}
+var chipOn  = { bg:'linear-gradient(180deg,#4C90FF,#0B4AD4)', bd:'#4C90FF', fg:'#FFFFFF', sh:'inset 0 1px 0 rgba(255,255,255,.45),inset 0 -1px 0 rgba(0,0,0,.2),0 8px 18px -6px rgba(7,78,232,.8)', icBg:'rgba(255,255,255,.22)' };
+var chipOff = { bg:'linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035))', bd:'rgba(255,255,255,.12)', fg:'rgba(216,231,255,.86)', sh:'inset 0 1px 0 rgba(255,255,255,.08)', icBg:'rgba(255,255,255,.07)' };
+function mkChips(items, key, extra){
+return items.map(function(it){
+var on = String(state[key]) === String(it.id);
+var c = on ? chipOn : chipOff;
+return { id:it.id, name:it.name, ic:it.ic || '', bg:c.bg, bd:c.bd, fg:c.fg, sh:c.sh, icBg:c.icBg, pressed: on ? 'true' : 'false',
+pick: function(){ var o = {}; o[key] = it.id; if (extra) extra(it, o); setState(o); } };
+});
+}
+function buildVals(){
+var providers = PROVIDERS.map(function(p){
+var l = logoStyles(p.color);
+var isTop = p.topPick === true; var isFeat = p.featured === true; var ft = isFeat || isTop; var pr0 = (p.promos && p.promos[0]) || null;
+return { name:p.name, geoLabel:p.geoLabel, desc:p.desc, tags:p.tags, price:p.price, letter:p.name.charAt(0),
+badge: p.badge || '', featured: ft, promo: pr0 ? pr0.b : '', promoCode: pr0 ? (pr0.code || '') : '', promoCond: pr0 ? (pr0.cond || '') : '', promoMore: (p.promos ? p.promos.length - 1 : 0),
+ribbonBg: isTop ? 'linear-gradient(180deg,#F6C750,#DE9526)' : 'linear-gradient(180deg,#3D85FF,#0A47CC)',
+ribbonText: isTop ? ('★ Our pick' + (p.badge ? ' · ' + p.badge : '')) : ('★ ' + (p.badge || '')),
+cardBg: isTop ? 'linear-gradient(180deg,#FFFFFF,#FFFBF0)' : isFeat ? 'linear-gradient(180deg,#FFFFFF,#F4F8FF)' : 'linear-gradient(180deg,#FFFFFF,#FBFCFE)',
+cardBd: isTop ? '#EBB13C' : isFeat ? '#A9C6F8' : '#E4EAF2',
+cardSh: isTop ? 'inset 0 1px 0 #fff,0 2px 6px rgba(214,150,30,.14),0 24px 48px -20px rgba(214,150,30,.5)' : isFeat ? 'inset 0 1px 0 #fff,0 2px 4px rgba(3,35,95,.06),0 22px 44px -20px rgba(7,78,232,.55)'
+           : 'inset 0 1px 0 #fff,0 1px 2px rgba(3,35,95,.04),0 18px 36px -22px rgba(3,35,95,.4)',
+link: p.noUtm ? p.url : addUtm(p.url, 'providers_list', p.id), logoBg:l.bg, logoSh:l.sh,
+track: function(){ goal('provider_click', { provider:p.id, place:'catalog' }); goal('go_' + p.id); } };
+});
+var results = (state.results || []).map(function(r, i){
+var p = r.p, top = (i < 3 && r.score >= 60), l = logoStyles(p.color); var rp0 = (p.promos && p.promos[0]) || null;
+return { rank:i+1, name:p.name, desc:p.desc, price:p.price, score:r.score, pct:r.score + '%',
+letter:p.name.charAt(0), top:top, badge: p.badge || '', topPick: p.topPick === true, promo: rp0 ? rp0.b : '', promoCode: rp0 ? (rp0.code || '') : '', matchTags:r.reasons, tags:p.tags.slice(0, 2),
+link: p.noUtm ? p.url : addUtm(p.url, 'calculator', p.id), logoBg:l.bg, logoSh:l.sh,
+cardBg: top ? 'linear-gradient(180deg,#FFFFFF,#F6F9FF)' : 'linear-gradient(180deg,#FFFFFF,#FBFCFE)',
+cardBd: top ? '#A9C6F8' : '#E4EAF2',
+cardSh: top ? 'inset 0 1px 0 #fff,0 2px 4px rgba(3,35,95,.06),0 26px 50px -24px rgba(7,78,232,.65)'
+: 'inset 0 1px 0 #fff,0 1px 2px rgba(3,35,95,.04),0 18px 36px -22px rgba(3,35,95,.4)',
+track: function(){ goal('provider_click', { provider:p.id, place:'calculator', position:i+1, score:r.score }); goal('go_' + p.id); } };
+});
+var PROMOS = []; PROVIDERS.forEach(function(p){ if(!p.promos) return; var l = logoStyles(p.color); p.promos.forEach(function(pr){ PROMOS.push({ provider:p.name, letter:p.name.charAt(0), logoBg:l.bg, logoSh:l.sh, benefit:pr.b, code:pr.code||'', hasCode: !!pr.code, cond:pr.cond||'', link: p.noUtm ? p.url : addUtm(p.url,'akcii', p.id), track: function(){ goal('provider_click',{provider:p.id,place:'promo'}); goal('go_'+p.id); goal('promo_click',{promo:p.id}); } }); }); });
+var hero = CFG.heroStyle;
+return {
+heroSplit: hero === 'split', heroMinimal: hero === 'minimal', heroFused: hero === 'fused',
+show3d: CFG.show3d !== false,
+sceneRef:'sceneRef', resRef:'resRef',
+menuOpen: state.menu, navCls: state.menu ? 'open' : '', menuIcon: state.menu ? '✕' : '☰', toggleMenu: function(){ setState({ menu: !state.menu }); }, closeMenu: function(){ if (state.menu) setState({ menu:false }); },
+tasks: mkChips(TASKS, 'task', function(it, o){ o.ram = it.ram; o.cpu = it.cpu; goal('calc_start', { task: it.id }); }),
+ramChips: mkChips(RAMS.map(function(r){ return { id:r, name:r + ' GB' }; }), 'ram'),
+cpuChips: mkChips(CPUS.map(function(r){ return { id:r, name:r + (r === 1 ? ' core' : ' cores') }; }), 'cpu'),
+geoChips: mkChips(GEOS, 'geo'),
+payChips: mkChips(PAYS, 'pay'),
+budgetChips: mkChips(BUDGETS, 'budget'),
+providers: providers, promos: PROMOS, news: NEWS.map(function(n){ return { date:n.date, tag:n.tag, title:n.title, text:n.text, url:n.url,
+track: function(){ goal('news_click', { news:n.id }); } }; }),
+results: results, hasResults: results.length > 0,
+runCalc: runCalc,
+showCookieBar: (CFG.showCookie !== false) && !state.cookieSeen,
+acceptCookie: function(){ try { localStorage.setItem('cookie_ok', '1'); } catch(e){} goal('cookie_accept'); setState({ cookieSeen:true }); },
+modalOpen: !!state.modal, isPrivacy: state.modal === 'privacy', isCookie: state.modal === 'cookie',
+openPrivacy: function(){ setState({ modal:'privacy' }); },
+openCookie:  function(){ setState({ modal:'cookie' }); },
+closeModal:  function(){ setState({ modal:null }); },
+onBackdrop:  function(e){ if (e.target === e.currentTarget) setState({ modal:null }); }
+};
+}
+var tplEl, rootEl;
+function render(){
+var y = window.pageYOffset;
+mount(tplEl, buildVals(), rootEl);
+window.scrollTo(0, y);
+}
+var target = { x:0, y:0 }, cur = { x:0, y:0 }, raf = null;
+function tick(){
+cur.x += (target.x - cur.x) * 0.07;
+cur.y += (target.y - cur.y) * 0.07;
+var n = document.querySelector('[data-scene]');
+if (n) n.style.transform = 'rotateX(' + (56 - cur.y) + 'deg) rotateZ(' + (-42 + cur.x) + 'deg) scale(.5)';
+raf = requestAnimationFrame(tick);
+}
+document.addEventListener('DOMContentLoaded', function(){
+tplEl = document.getElementById('tpl');
+rootEl = document.getElementById('root');
+window.addEventListener('scroll', function(){ var t=document.getElementById('totop'); if(t){ var v=window.pageYOffset>500; t.style.opacity=v?'1':'0'; t.style.pointerEvents=v?'auto':'none'; } }, { passive:true });
+var dt = CFG.defaultTask;
+if (dt){
+var t = TASKS.filter(function(x){ return x.id === dt; })[0];
+if (t){ state.task = t.id; state.ram = t.ram; state.cpu = t.cpu; }
+}
+render();
+var seen = true;
+try { seen = localStorage.getItem('cookie_ok') === '1'; } catch(e){ seen = false; }
+if (!seen) setTimeout(function(){ setState({ cookieSeen:false }); }, 700);
+window.addEventListener('mousemove', function(e){
+var w = window.innerWidth || 1, h = window.innerHeight || 1;
+target.x = ((e.clientX / w) - .5) * 10;
+target.y = ((e.clientY / h) - .5) * 8;
+}, { passive:true });
+raf = requestAnimationFrame(tick);
+window.addEventListener('keydown', function(e){ if (e.key === 'Escape' && state.modal) setState({ modal:null }); });
+// Cookies are accepted only via the explicit Accept button (see acceptCookie). Auto-accept on any click is removed.
+});
+</script>
+</body>
+</html>

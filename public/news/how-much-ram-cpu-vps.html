@@ -108,5 +108,15 @@ footer{background:linear-gradient(180deg,#FFFFFF,#F7F9FC);border-top:1px solid #
 <div class="fnav"><a href="/">Home</a><a href="/#calc">Calculator</a><a href="/#providers">Providers</a><a href="/deals">Sales</a><a href="/news">News</a><a href="/about">About</a><a href="/methodology">How we rank</a><a href="mailto:info@serverselection.online">info@serverselection.online</a></div>
 <p class="disc">ServerSelection is an information and reference service for comparing virtual-server plans. The site is not a hosting reseller and does not provide hosting or communication services. All trademarks belong to their respective owners. Prices and specs are approximate, are not a public offer and may differ from current ones, so check the terms on the provider’s site. We may earn an affiliate commission when you follow a link. News materials are prepared by the editorial team and reflect their content as of the publication date. © 2026 ServerSelection</p>
 </div></footer>
+<script>
+try{
+if(/[?&](gclid|gbraid|wbraid|utm_medium=cpc)/.test(location.search)){sessionStorage.setItem('ss_ads','1');}
+if(sessionStorage.getItem('ss_ads')==='1'){
+document.addEventListener('DOMContentLoaded',function(){
+var a=document.querySelectorAll('a[href*="utm_medium=eng"]');
+for(var i=0;i<a.length;i++){a[i].href=a[i].href.replace(/utm_medium=eng(?=&|$)/,"utm_medium=eng-ads");}
+});}
+}catch(e){}
+</script>
 </body>
 </html>

@@ -256,11 +256,16 @@ try { if (typeof window.gtag === 'function') window.gtag('event', name, params |
 }
 window.goal = goal;
 // UTM scheme: utm_source=serverselection | utm_medium=eng, or eng-ads for visitors who arrived via paid ads (gclid) | utm_campaign=<page/block> | utm_content=<provider slug>
-var ADS = false;
-try { if (/[?&](gclid|gbraid|wbraid|utm_medium=cpc)/.test(location.search)) { sessionStorage.setItem('ss_ads','1'); } } catch(e){}
-try { ADS = sessionStorage.getItem('ss_ads') === '1'; } catch(e){}
+var ADS = false, ADTERM = '';
+try {
+var q = location.search;
+if (/[?&](gclid|gbraid|wbraid|utm_medium=cpc)/.test(q)) { sessionStorage.setItem('ss_ads','1'); }
+var g = (q.match(/[?&]gid=([^&]+)/) || [])[1] || '', a = (q.match(/[?&]aid=([^&]+)/) || [])[1] || '';
+if (g || a) { sessionStorage.setItem('ss_term', 'g' + g + '-a' + a); }
+} catch(e){}
+try { ADS = sessionStorage.getItem('ss_ads') === '1'; ADTERM = sessionStorage.getItem('ss_term') || ''; } catch(e){}
 function addUtm(url, campaign, slug){
-var utm = 'utm_source=serverselection&utm_medium=' + (ADS ? 'eng-ads' : 'eng') + '&utm_campaign=' + (campaign || 'site') + (slug ? '&utm_content=' + slug : '');
+var utm = 'utm_source=serverselection&utm_medium=' + (ADS ? 'eng-ads' : 'eng') + '&utm_campaign=' + (campaign || 'site') + (slug ? '&utm_content=' + slug : '') + (ADTERM ? '&utm_term=' + ADTERM : '');
 var h = url.indexOf('#'), frag = '';
 if (h >= 0){ frag = url.slice(h); url = url.slice(0, h); }
 url += (url.indexOf('?') >= 0 ? '&' : '?') + utm;

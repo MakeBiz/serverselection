@@ -108,11 +108,15 @@ footer{background:linear-gradient(180deg,#FFFFFF,#F7F9FC);border-top:1px solid #
 </div></footer>
 <script>
 try{
-if(/[?&](gclid|gbraid|wbraid|utm_medium=cpc)/.test(location.search)){sessionStorage.setItem('ss_ads','1');}
+var q=location.search;
+if(/[?&](gclid|gbraid|wbraid|utm_medium=cpc)/.test(q)){sessionStorage.setItem('ss_ads','1');}
+var g=(q.match(/[?&]gid=([^&]+)/)||[])[1]||'',d=(q.match(/[?&]aid=([^&]+)/)||[])[1]||'';
+if(g||d){sessionStorage.setItem('ss_term','g'+g+'-a'+d);}
 if(sessionStorage.getItem('ss_ads')==='1'){
+var t=sessionStorage.getItem('ss_term')||'';
 document.addEventListener('DOMContentLoaded',function(){
 var a=document.querySelectorAll('a[href*="utm_medium=eng"]');
-for(var i=0;i<a.length;i++){a[i].href=a[i].href.replace(/utm_medium=eng(?=&|$)/,"utm_medium=eng-ads");}
+for(var i=0;i<a.length;i++){a[i].href=a[i].href.replace(/utm_medium=eng(?=&|$)/,"utm_medium=eng-ads")+(t?"&utm_term="+t:"");}
 });}
 }catch(e){}
 </script>

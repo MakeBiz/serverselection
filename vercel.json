@@ -38,5 +38,11 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/px/:path*",
+      "destination": "https://vps-analytics.vercel.app/px/:path*"
+    }
   ]
 }
